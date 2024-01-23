@@ -40,9 +40,12 @@ Route::middleware('auth')->group(function () {
 // routes/web.php
 
 Route::get('/dashboard/klanten', [DashboardController::class, 'goToKlantenOverview'])->name('dashboard.klanten');
-
-
+Route::get('/klanten/create', [KlantController::class, 'create'])->name('klanten.create');
 Route::get('/klanten', [KlantController::class, 'index'])->name('klanten.index');
+Route::post('/klanten', [KlantController::class, 'store'])->name('klanten.store');
+Route::get('/klanten/{klant}/edit', [KlantController::class, 'edit'])->name('klanten.edit');
+Route::delete('/klanten/{klant}', [KlantController::class, 'destroy'])->name('klanten.destroy');
+Route::resource('klanten', KlantController::class);
 
 
 require __DIR__.'/auth.php';
