@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Persoon; 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 
 class DashboardController extends Controller
 {
@@ -13,4 +15,10 @@ class DashboardController extends Controller
 
         return view('dashboard', compact('aantalCliënten'));
     }
+
+
+public function goToKlantenOverview()
+{
+    return Redirect::route('klanten.index');
+}
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KlantController;
 
 
 /*
@@ -35,5 +36,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// routes/web.php
+
+Route::get('/dashboard/klanten', [DashboardController::class, 'goToKlantenOverview'])->name('dashboard.klanten');
+
+
+Route::get('/klanten', [KlantController::class, 'index'])->name('klanten.index');
+
 
 require __DIR__.'/auth.php';
