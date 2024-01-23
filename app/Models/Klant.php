@@ -14,21 +14,4 @@ class Klant extends Model
         'bedrijfsnaam',
         'kvk_nummer',
     ];
-
-    
-    public function edit(Klant $klant)
-    {
-        return view('klanten.edit', compact('klant'));
-    }
-    
-
-    public function contacten()
-    {
-        return $this->hasMany(Contact::class);
-    }
-
-    public function gesprekken()
-    {
-        return $this->hasMany(Gesprek::class);
-    }
 }

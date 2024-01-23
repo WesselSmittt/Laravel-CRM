@@ -46,6 +46,7 @@ Route::post('/klanten', [KlantController::class, 'store'])->name('klanten.store'
 Route::get('/klanten/{klant}/edit', [KlantController::class, 'edit'])->name('klanten.edit');
 Route::delete('/klanten/{klant}', [KlantController::class, 'destroy'])->name('klanten.destroy');
 Route::resource('klanten', KlantController::class);
+Route::put('/klanten/{klant}', [KlantController::class, 'update'])->name('klanten.update');
 
 
 require __DIR__.'/auth.php';
