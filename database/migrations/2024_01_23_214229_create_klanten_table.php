@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBedrijvenTable extends Migration
+class CreateKlantenTable extends Migration
 {
     public function up()
     {
-        Schema::create('bedrijven', function (Blueprint $table) {
+        Schema::create('klanten', function (Blueprint $table) {
             $table->id();
             $table->boolean('is_bedrijf');
             $table->string('bedrijfsnaam')->nullable();
@@ -19,7 +19,6 @@ class CreateBedrijvenTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('bedrijven');
+        Schema::dropIfExists('klanten');
     }
 }
-
