@@ -17,25 +17,28 @@
                 <table class="min-w-full bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <!-- Tabelkop -->
                     <!-- Tabelkop -->
+<!-- Tabelkop -->
 <thead>
     <tr>
-    <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700 text-left text-xs leading-4 font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Bedrijf</th>
-        <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700 text-left text-xs leading-4 font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Bedrijfsnaam</th>
-        <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700 text-left text-xs leading-4 font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">KVK Nummer</th>
-        <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700"></th>
+        <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700 text-left text-xs leading-4 font-medium text-gray-500 dark:text-gray-500 uppercase tracking-wider">Bedrijf</th>
+        <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700 text-left text-xs leading-4 font-medium text-gray-500 dark:text-gray-500 uppercase tracking-wider">Bedrijfsnaam</th>
+        <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700 text-left text-xs leading-4 font-medium text-gray-500 dark:text-gray-500 uppercase tracking-wider">KVK Nummer</th>
+        <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700 text-left text-xs leading-4 font-medium text-gray-500 dark:text-gray-500 uppercase tracking-wider">Acties</th>
+        <!-- Nieuwe kolom met oogje emoji -->
+        <th class="px-6 py-3 border-b border-gray-200 dark:border-gray-700 text-left text-xs leading-4 font-medium text-gray-500 dark:text-gray-500 uppercase tracking-wider">Details</th>
     </tr>
 </thead>
 <!-- Tabelinhoud -->
 <tbody>
     @foreach ($klanten as $klant)
         <tr>
-        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-gray-700">
+            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-gray-700 dark:text-gray-200">
                 {{ $klant->is_bedrijf ? 'Ja' : 'Nee' }}
             </td>
-            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-gray-700">
+            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-gray-700 dark:text-gray-200">
                 {{ $klant->bedrijfsnaam }}
             </td>
-            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-gray-700">
+            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-gray-700 dark:text-gray-200">
                 {{ $klant->kvk_nummer }}
             </td>
             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-gray-700">
@@ -46,9 +49,14 @@
                     <button type="submit" class="text-red-500 hover:text-red-700">Verwijderen</button>
                 </form>
             </td>
+            <!-- Nieuwe kolom met oogje emoji en link naar unieke pagina -->
+            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 dark:border-gray-700">
+                <a href="{{ route('klanten.show', $klant->id) }}" class="text-green-500 hover:text-green-700">👁️</a>
+            </td>
         </tr>
     @endforeach
 </tbody>
+
 
                 </table>
             </div>
