@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KlantController;
+use App\Http\Controllers\PersonenController;
+
 
 
 /*
@@ -48,6 +50,15 @@ Route::delete('/klanten/{klant}', [KlantController::class, 'destroy'])->name('kl
 Route::resource('klanten', KlantController::class);
 Route::put('/klanten', [KlantController::class, 'update'])->name('klanten.update');
 Route::get('/klanten/{klant}', [KlantController::class, 'show'])->name('klanten.show');
+
+
+Route::get('/contacten', [PersonenController::class, 'index'])->name('contacten.index');
+Route::get('/contacten/create', [PersonenController::class, 'create'])->name('contacten.create');
+Route::post('/contacten', [PersonenController::class, 'store'])->name('contacten.store');
+Route::get('/contacten/{id}', [PersonenController::class, 'show'])->name('contacten.show');
+Route::get('/contacten/{id}/edit', [PersonenController::class, 'edit'])->name('contacten.edit');
+Route::put('/contacten/{id}', [PersonenController::class, 'update'])->name('contacten.update');
+Route::delete('/contacten/{id}', [PersonenController::class, 'destroy'])->name('contacten.destroy');
 
 
 require __DIR__.'/auth.php';

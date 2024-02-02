@@ -35,7 +35,7 @@
                                 {{ $aantalContacten }}
                             </div>
                             <div class="mt-4">
-                            <a href="{{ route('dashboard.klanten') }}" class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">
+                            <a href="{{ route('contacten.index') }}" class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">
                             Ga naar contacten overzicht
                             </a>
                             </div>
