@@ -59,11 +59,11 @@ public function create()
 
     return redirect()->route('klanten.index')->with('success', 'Klant succesvol toegevoegd.');
 }
-
 public function show($id)
-    {
-        $klant = Klant::find($id);
+{
+    $klant = Klant::findOrFail($id);
+    $toegewezenPersonen = $klant->contactpersonen;
 
-        return view('klanten.show', compact('klant'));
-    }
+    return view('klanten.show', compact('klant', 'toegewezenPersonen'));
+}
 }

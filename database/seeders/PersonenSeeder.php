@@ -5,7 +5,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Persoon;
+use App\Models\Personen;
 use Faker\Factory as Faker;
 
 class PersonenSeeder extends Seeder
@@ -18,7 +18,7 @@ class PersonenSeeder extends Seeder
         $aantalPersonen = 20;
 
         for ($i = 0; $i < $aantalPersonen; $i++) {
-            Persoon::create([
+            Personen::create([
                 'voornaam' => $faker->firstName,
                 'achternaam' => $faker->lastName,
                 'straat' => $faker->streetName,
@@ -28,6 +28,8 @@ class PersonenSeeder extends Seeder
                 'email' => $faker->email,
                 'telefoonnummer' => $faker->phoneNumber,
                 'functie' => $faker->jobTitle,
+                'klant_id' => 1,
+
             ]);
         }
     }

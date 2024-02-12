@@ -22,4 +22,9 @@ class Personen extends Model
         'telefoonnummer',
         'functie',
     ];
+
+    public function klant()
+    {
+        return $this->belongsTo(Klant::class);
+    }
 }

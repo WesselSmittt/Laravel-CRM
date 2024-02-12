@@ -15,8 +15,7 @@ class CreateGesprekkenTable extends Migration
             $table->string('gesproken_met');
             $table->text('notitie_gesprek')->nullable();
             $table->unsignedBigInteger('persoon_id');
-            $table->foreign('persoon_id')->references('id')->on('personen')->onDelete('cascade');
-
+            $table->foreign('persoon_id')->references('id')->on('personen')->onDelete('cascade')->nullable();
             $table->timestamps();
         });
     }

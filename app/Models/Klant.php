@@ -14,4 +14,9 @@ class Klant extends Model
         'bedrijfsnaam',
         'kvk_nummer',
     ];
+
+    public function contactpersonen()
+    {
+        return $this->hasMany(Personen::class);
+    }
 }

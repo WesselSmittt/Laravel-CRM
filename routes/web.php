@@ -59,6 +59,8 @@ Route::get('/contacten/{id}', [PersonenController::class, 'show'])->name('contac
 Route::get('/contacten/{id}/edit', [PersonenController::class, 'edit'])->name('contacten.edit');
 Route::put('/contacten/{id}', [PersonenController::class, 'update'])->name('contacten.update');
 Route::delete('/contacten/{id}', [PersonenController::class, 'destroy'])->name('contacten.destroy');
+Route::post('/klanten/{klant}/toegewezen', [KlantController::class, 'toegewezenPersoonToevoegen'])->name('toegewezen.toevoegen');
+Route::delete('/klanten/{klant}/toegewezen/{persoon}', [KlantController::class, 'verwijderToegewezenPersoon'])->name('toegewezen.verwijderen');
 
 
 require __DIR__.'/auth.php';
